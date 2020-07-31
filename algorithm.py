@@ -1,13 +1,18 @@
-# Jay, this isn't javascript. Fight me! Actually don't im scared
+""" Module Docstring following Google Style Guide
+
+This is a cloud function that does the googley moogley
+
+Todo:
+    * Write the function
+"""
+#from datetime import datetime
 import json
+
 import googlemaps
-from datetime import datetime
 
-gmaps = googlemaps.Client(key='')
-# Api Stuff Goes here
-
-
-# Main code loop
+# get our googley boi
+k = open('apiKey.txt', 'r')
+gmaps = googlemaps.Client(key=k.read())
 
 data = {
     'start': 1000,
@@ -15,13 +20,11 @@ data = {
     'location': 'North Melbourne'  # Coordinate system or use google converter
 }
 
-
 # Algorithm Pipeline
-# Api key:
-# Install this boi:  pip install -U googlemaps
-
+# get list of all places in North Melbourne
+# Filter out places that are not open during start and end time
+# get popularity data, sort remaining places by popularity during open hours
 
 data_json = json.dumps(data)
 
-# send to pikey
 print(data_json)
